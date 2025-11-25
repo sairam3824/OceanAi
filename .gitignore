@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# Vector Database
+chroma_db/
+faiss_index/
+qdrant_storage/
+
+# Uploads
+uploads/
+temp/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# OS
+.DS_Store
+Thumbs.db
+
+Assignment - 1.pdf
