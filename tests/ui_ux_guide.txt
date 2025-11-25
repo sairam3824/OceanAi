@@ -1,0 +1,98 @@
+UI/UX Guide for E-Commerce Checkout
+
+1. LAYOUT AND STRUCTURE
+   - Checkout form should be organized in clear sections
+   - Use progressive disclosure to reduce cognitive load
+   - Display order summary prominently on the right side
+   - Keep form fields vertically aligned for easy scanning
+
+2. FORM DESIGN
+   - Use clear, descriptive labels above each input field
+   - Mark required fields with asterisk (*)
+   - Provide inline validation feedback
+   - Use appropriate input types (email, tel, text)
+   - Group related fields together
+
+3. CUSTOMER INFORMATION SECTION
+   - Email field should be first
+   - Phone number is optional
+   - Use placeholder text to show format examples
+   - Validate email format on blur
+
+4. SHIPPING ADDRESS SECTION
+   - First name and last name on same row
+   - Full-width address field
+   - City, state, and ZIP on same row
+   - State should be dropdown menu
+   - ZIP code limited to 5 digits
+
+5. PAYMENT INFORMATION SECTION
+   - Card number field should accept 16 digits
+   - Show card type icon based on number
+   - Expiry date and CVV on same row
+   - Use MM/YY format for expiry
+   - Mask card number for security
+
+6. DISCOUNT CODE SECTION
+   - Provide text input for code entry
+   - Include "Apply" button next to input
+   - Show success message in green when valid
+   - Show error message in red when invalid
+   - Update order summary immediately when applied
+
+7. ORDER SUMMARY
+   - Display subtotal, discount, tax, and total
+   - Update totals dynamically when discount applied
+   - Highlight total amount
+   - Show all amounts in currency format ($XX.XX)
+
+8. BUTTONS AND ACTIONS
+   - Primary button: "Place Order" (prominent, blue)
+   - Secondary button: "Cancel" (less prominent, gray)
+   - Disable submit button while processing
+   - Show loading indicator during submission
+
+9. VALIDATION AND ERROR HANDLING
+   - Validate fields on blur (when user leaves field)
+   - Show error messages below the field
+   - Use red color for error messages
+   - Prevent form submission if validation fails
+   - Scroll to first error field
+
+10. SUCCESS STATE
+    - Hide checkout form on successful order
+    - Display confirmation message
+    - Show order ID prominently
+    - Provide link to order tracking
+
+11. RESPONSIVE DESIGN
+    - Stack form sections vertically on mobile
+    - Increase touch target size for mobile
+    - Adjust font sizes for readability
+    - Ensure buttons are easily tappable
+
+12. ACCESSIBILITY
+    - Use semantic HTML elements
+    - Provide ARIA labels where needed
+    - Ensure keyboard navigation works
+    - Maintain sufficient color contrast
+    - Support screen readers
+
+13. PERFORMANCE
+    - Load form quickly
+    - Minimize JavaScript execution
+    - Optimize images and assets
+    - Cache static resources
+
+14. SECURITY
+    - Use HTTPS for all transactions
+    - Never store CVV
+    - Mask sensitive information
+    - Implement CSRF protection
+    - Use secure payment gateway
+
+15. USER FEEDBACK
+    - Provide immediate feedback for all actions
+    - Use animations for state transitions
+    - Show progress indicators
+    - Confirm destructive actions

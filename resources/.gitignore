@@ -1,0 +1,9 @@
+# Ignore all files in resources subfolders
+uploads/*
+queries/*
+scripts/*
+
+# But keep the folder structure
+!uploads/.gitkeep
+!queries/.gitkeep
+!scripts/.gitkeep

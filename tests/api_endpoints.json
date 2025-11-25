@@ -1,0 +1,155 @@
+{
+  "endpoints": [
+    {
+      "path": "/api/checkout/validate-email",
+      "method": "POST",
+      "description": "Validate email format",
+      "request": {
+        "email": "string"
+      },
+      "response": {
+        "valid": "boolean",
+        "message": "string"
+      }
+    },
+    {
+      "path": "/api/checkout/validate-discount",
+      "method": "POST",
+      "description": "Validate and apply discount code",
+      "request": {
+        "code": "string",
+        "subtotal": "number"
+      },
+      "response": {
+        "valid": "boolean",
+        "discountAmount": "number",
+        "discountPercent": "number",
+        "message": "string"
+      }
+    },
+    {
+      "path": "/api/checkout/calculate-tax",
+      "method": "POST",
+      "description": "Calculate tax based on location and amount",
+      "request": {
+        "subtotal": "number",
+        "discount": "number",
+        "state": "string"
+      },
+      "response": {
+        "taxAmount": "number",
+        "taxRate": "number"
+      }
+    },
+    {
+      "path": "/api/checkout/process-payment",
+      "method": "POST",
+      "description": "Process payment and create order",
+      "request": {
+        "email": "string",
+        "phone": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "address": "string",
+        "city": "string",
+        "state": "string",
+        "zip": "string",
+        "cardNumber": "string",
+        "cardName": "string",
+        "expiryDate": "string",
+        "cvv": "string",
+        "discountCode": "string"
+      },
+      "response": {
+        "success": "boolean",
+        "orderId": "string",
+        "message": "string",
+        "total": "number"
+      }
+    },
+    {
+      "path": "/api/checkout/validate-card",
+      "method": "POST",
+      "description": "Validate credit card information",
+      "request": {
+        "cardNumber": "string",
+        "expiryDate": "string",
+        "cvv": "string"
+      },
+      "response": {
+        "valid": "boolean",
+        "cardType": "string",
+        "message": "string"
+      }
+    },
+    {
+      "path": "/api/checkout/validate-address",
+      "method": "POST",
+      "description": "Validate shipping address",
+      "request": {
+        "address": "string",
+        "city": "string",
+        "state": "string",
+        "zip": "string"
+      },
+      "response": {
+        "valid": "boolean",
+        "message": "string",
+        "suggestions": "array"
+      }
+    }
+  ],
+  "discountCodes": {
+    "SAVE10": {
+      "type": "percentage",
+      "value": 10,
+      "description": "10% off entire order"
+    },
+    "SAVE15": {
+      "type": "percentage",
+      "value": 15,
+      "description": "15% off entire order"
+    },
+    "SAVE20": {
+      "type": "percentage",
+      "value": 20,
+      "description": "20% off entire order"
+    },
+    "FREESHIP": {
+      "type": "fixed",
+      "value": 10,
+      "description": "Free shipping"
+    },
+    "WELCOME": {
+      "type": "fixed",
+      "value": 5,
+      "description": "$5 off for new customers"
+    }
+  },
+  "validationRules": {
+    "email": {
+      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      "required": true
+    },
+    "phone": {
+      "pattern": "^\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$",
+      "required": false
+    },
+    "zip": {
+      "pattern": "^\\d{5}$",
+      "required": true
+    },
+    "cardNumber": {
+      "pattern": "^\\d{16}$",
+      "required": true
+    },
+    "expiryDate": {
+      "pattern": "^(0[1-9]|1[0-2])\\/\\d{2}$",
+      "required": true
+    },
+    "cvv": {
+      "pattern": "^\\d{3,4}$",
+      "required": true
+    }
+  }
+}

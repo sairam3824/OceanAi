@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+</head>
+<body>
+    <div id="checkout-container">
+        <h1>Checkout</h1>
+        
+        <form id="checkout-form" action="/process-order" method="POST">
+            <!-- Customer Information -->
+            <section id="customer-info">
+                <h2>Customer Information</h2>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+            </section>
+            
+            <!-- Shipping Address -->
+            <section id="shipping-address">
+                <h2>Shipping Address</h2>
+                <div class="form-group">
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="state">State:</label>
+                    <select id="state" name="state" required>
+                        <option value="">Select State</option>
+                        <option value="CA">California</option>
+                        <option value="NY">New York</option>
+                        <option value="TX">Texas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" required>
+                </div>
+            </section>
+            
+            <!-- Payment Information -->
+            <section id="payment-info">
+                <h2>Payment Information</h2>
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" name="cardNumber" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">Name on Card:</label>
+                    <input type="text" id="card-name" name="cardName" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date:</label>
+                    <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required>
+                </div>
+            </section>
+            
+            <!-- Discount Code -->
+            <section id="discount-section">
+                <h2>Discount Code</h2>
+                <div class="form-group">
+                    <label for="discount-code">Enter Code:</label>
+                    <input type="text" id="discount-code" name="discountCode">
+                    <button type="button" id="apply-discount" class="btn-secondary">Apply</button>
+                </div>
+                <div id="discount-message" class="message"></div>
+            </section>
+            
+            <!-- Order Summary -->
+            <section id="order-summary">
+                <h2>Order Summary</h2>
+                <div id="subtotal" class="summary-line">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-amount">$100.00</span>
+                </div>
+                <div id="discount-amount" class="summary-line">
+                    <span>Discount:</span>
+                    <span id="discount-value">$0.00</span>
+                </div>
+                <div id="tax" class="summary-line">
+                    <span>Tax:</span>
+                    <span id="tax-amount">$8.00</span>
+                </div>
+                <div id="total" class="summary-line total">
+                    <span>Total:</span>
+                    <span id="total-amount">$108.00</span>
+                </div>
+            </section>
+            
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" id="place-order" class="btn-primary">Place Order</button>
+                <button type="button" id="cancel-order" class="btn-secondary">Cancel</button>
+            </div>
+        </form>
+        
+        <!-- Order Confirmation -->
+        <div id="order-confirmation" style="display: none;">
+            <h2>Order Confirmed!</h2>
+            <p id="confirmation-message">Thank you for your order.</p>
+            <p>Order ID: <span id="order-id"></span></p>
+        </div>
+    </div>
+</body>
+</html>
