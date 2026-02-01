@@ -228,55 +228,42 @@ pip install -r requirements.txt
 
 ### Step 4: Configure Environment Variables
 
-Create a `.env` file in the project root:
-
-```bash
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key_here
-
-# Model Configuration
-EMBEDDING_MODEL=all-MiniLM-L6-v2
-LLM_MODEL=gpt-3.5-turbo
-
-# Chunking Configuration
-CHUNK_SIZE=500
-CHUNK_OVERLAP=50
-
-# Vector DB Configuration
-TOP_K_RESULTS=5
-```
-
-**Important**: Replace `your_openai_api_key_here` with your actual OpenAI API key.
+1. Open the `.env` file in the root directory.
+2. Replace `youopenaikey` with your actual **OpenAI API Key**.
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Running the Application
 
-### Option 1: Using Shell Scripts (Recommended)
+The project includes smart startup scripts that handle environment detection and service launching.
 
-#### Terminal 1 - Start Backend
+### 1. Launch Backend (Terminal 1)
 ```bash
-chmod +x start_backend.sh
 ./start_backend.sh
 ```
+*The API will be available at [http://localhost:8000](http://localhost:8000)*
 
-#### Terminal 2 - Start Frontend
+### 2. Launch Frontend (Terminal 2)
 ```bash
-chmod +x start_frontend.sh
 ./start_frontend.sh
 ```
+*The UI will open at [http://localhost:8501](http://localhost:8501)*
 
-### Option 2: Manual Start
+---
 
-#### Terminal 1 - Start Backend
+### 🛠️ Manual Startup (Alternative)
+
+If you prefer to start services manually:
+
+**Backend:**
 ```bash
 cd backend
 python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
-#### Terminal 2 - Start Frontend
+**Frontend:**
 ```bash
-streamlit run frontend/app.py --server.port 8501
+streamlit run frontend/app.py
 ```
 
 ### Access the Application
