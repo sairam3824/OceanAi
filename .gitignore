@@ -16,7 +16,7 @@ ENV/
 *.swo
 
 # Environment
-.env
+# .env (Uncommented for this specific request)
 
 # Vector Database
 chroma_db/
